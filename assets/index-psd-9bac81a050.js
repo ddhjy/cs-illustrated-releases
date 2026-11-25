@@ -617,10 +617,6 @@ import*as __PSD__ from"../extra/index.js";(function(){let e=document.createEleme
         </div>
       </div>
       <button class="theme-btn" id="theme-btn" type="button"></button>
-      <a class="credit" href="https://x.com/DilumSanjaya" target="_blank" rel="noopener" data-t-title="Dilum Sanjaya on X" title="Dilum Sanjaya on X">
-        <span class="credit__x" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
-        <span class="credit__text"><small data-t="designed by">designed by</small><b><span>@DilumSanjaya</span></b></span>
-      </a>
     </header>
 
     <div class="body">
@@ -638,10 +634,6 @@ import*as __PSD__ from"../extra/index.js";(function(){let e=document.createEleme
         <section class="card progress" id="progress"></section>
         <div class="drawer-foot">
           <button class="lang__btn" id="lang-btn-2" type="button" aria-haspopup="menu" aria-label="Language: English">${i(`globe`,{size:16,stroke:2})}<span class="lang__code">English</span></button>
-          <a class="credit" href="https://x.com/DilumSanjaya" target="_blank" rel="noopener" data-t-title="Dilum Sanjaya on X" title="Dilum Sanjaya on X">
-        <span class="credit__x" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
-        <span class="credit__text"><small data-t="designed by">designed by</small><b><span>@DilumSanjaya</span></b></span>
-      </a>
         </div>
       </aside>
       <div class="drawer-backdrop" id="drawer-backdrop"></div>

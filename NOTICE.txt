@@ -7,7 +7,8 @@ CS Illustrated（图解计算机）是一个派生站点，由以下几部分组
 - 作者：Dilum Sanjaya（https://x.com/DilumSanjaya ，GitHub: https://github.com/dilums ）
 - 原站：https://designed-to-scale.vercel.app/ （2026-11-16 发布）
 - 本仓库 `site/assets/` 下的全部构建产物（主 bundle `index-BeXJu_A0.js`、40 节系统设计课程的分块、21 种语言的 UI 词典、`index-CxX-BAVx.css`）、`site/og.jpg`、图标与 `site/index.html` 的主体均镜像自原站，未经重新构建。
-- `site/assets/index-psd-*.js` 是 `tools/patch-bundle.mjs` 在原 bundle 上做少量字符串拼接得到的版本（接入 `site/extra/`、品牌改名、语言菜单裁剪）。原站页脚的 "designed by @DilumSanjaya" 署名、`<meta name="author">` 与 JSON-LD 中的作者信息均保留，不得移除。
+- `site/assets/index-psd-*.js` 是 `tools/patch-bundle.mjs` 在原 bundle 上做少量字符串拼接得到的版本（接入 `site/extra/`、品牌改名、语言菜单裁剪）。
+- 页面内的署名元素（顶栏 / 侧栏的 "designed by @DilumSanjaya" 链接、`<meta name="author">`、`twitter:creator`、JSON-LD 的 author / provider 字段，以及 UI 词典中对应的两条翻译）已于 2026-11-25 由本仓库所有者决定移除（源码提交 `1590fbb`，"chore: remove designer credit links and update site assets"），所有者声明此举在其取得的授权范围内。原作者与来源的声明保留在本文件中，并作为 `NOTICE.txt` 随站点一同发布（`https://cs.suixinapp.com/NOTICE.txt`）；`tools/check-site.mjs` 校验该文件随发布树存在并写明原作者与原站。
 - **公开许可证：未找到。** 截至 2026-11-25，未在原站、作者公开 GitHub 仓库或其它公开渠道找到该作品的源码仓库或任何许可证（MIT / CC 等）声明。
 - **授权状态：所有者声明已获授权。** 本仓库所有者（ddhjy）于 2026-11-25 19:33（Asia/Shanghai）确认其已取得对镜像 / 改编内容的授权，并批准公开发布（原话："有的 可以发布"）。本仓库未存档授权的书面凭据；该声明由所有者负责，发布依据即此声明。如授权范围变化或被撤销，按 `docs/RELEASE.md` 第 6 节下线。
 

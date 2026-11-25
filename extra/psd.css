@@ -24,8 +24,7 @@
   stroke: #ecd3c0;
 }
 
-/* No "Course · 49 lessons" header above the tree. (The original author's "designed by" credit
-   in the topbar and drawer stays visible: this is a derived work of Dilum Sanjaya's course.) */
+/* No "Course · 49 lessons" header above the tree. */
 :root[data-layout='desktop'] .tree-root {
   display: none;
 }

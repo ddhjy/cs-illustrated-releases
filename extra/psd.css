@@ -1,0 +1,310 @@
+/* Extra folder colours for new modules. */
+.folder--cocoa path {
+  fill: #9c6b4a;
+  stroke: #6f4930;
+}
+.folder--amber path {
+  fill: #d99b38;
+  stroke: #9e6c1c;
+}
+.folder--indigo path {
+  fill: #5b6ee1;
+  stroke: #3b4aa8;
+}
+.folder--ink path {
+  fill: var(--ink-2);
+  stroke: var(--ink);
+}
+.folder--ink .folder__lip {
+  stroke: var(--paper);
+}
+:root[data-theme='dark'] .folder--cocoa path,
+:root[data-theme='dark'] .folder--amber path,
+:root[data-theme='dark'] .folder--indigo path {
+  stroke: #ecd3c0;
+}
+
+/* No "Course · 49 lessons" header above the tree. (The original author's "designed by" credit
+   in the topbar and drawer stays visible: this is a derived work of Dilum Sanjaya's course.) */
+:root[data-layout='desktop'] .tree-root {
+  display: none;
+}
+.tree-root {
+  justify-content: flex-end;
+}
+.tree-root > svg,
+.tree-root > span {
+  display: none;
+}
+
+/* Subject folders: same shape as a module row, one level up. */
+.subj__head {
+  text-align: start;
+  width: 100%;
+  min-height: 36px;
+  color: var(--ink);
+  align-items: center;
+  gap: 0;
+  padding-block: 3px;
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  cursor: pointer;
+}
+.subj__head .folder {
+  flex: none;
+  margin-inline-end: 9px;
+}
+.subj__chev {
+  flex: none;
+  margin-inline-end: 13px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.subj.is-open .subj__chev {
+  transform: rotate(90deg);
+}
+.subj__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.subj__count {
+  color: var(--muted-2);
+  flex: none;
+  margin-inline-start: auto;
+  padding-inline-start: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.subj__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.34s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.subj.is-open .subj__body {
+  grid-template-rows: 1fr;
+}
+.subj__clip {
+  min-height: 0;
+  overflow: hidden;
+}
+.subj__mods {
+  position: relative;
+  margin-block: 0 6px;
+  margin-inline-start: 7px;
+  padding-inline-start: 13px;
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+.subj.is-open .subj__mods {
+  opacity: 1;
+}
+.subj__mods::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 18px;
+  border-inline-start: 1px solid var(--c-a69d91);
+}
+.subj + .subj {
+  margin-top: 4px;
+}
+:root[dir='rtl'] .subj:not(.is-open) .subj__chev {
+  transform: scaleX(-1);
+}
+
+/* Subject labels inside the progress card. */
+.progress__subj {
+  margin: 8px 0 3px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--line);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  list-style: none;
+}
+.progress__list > .progress__subj:first-child {
+  margin-top: 2px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Breadcrumb: each part links somewhere and lists its siblings on hover. */
+.lesson-head {
+  position: relative;
+  z-index: 30;
+}
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.crumb__seg {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 6px;
+  padding: 1px 4px;
+  margin-inline: -4px 0;
+  outline: 0;
+}
+.crumb__seg:hover,
+.crumb__seg:focus-within {
+  background: var(--c-f3eadd);
+}
+.crumb__link {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.crumb__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.crumb__chev {
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+.crumb__seg:hover .crumb__chev,
+.crumb__seg:focus-within .crumb__chev {
+  transform: rotate(180deg);
+}
+.crumb__menu {
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  padding-top: 6px;
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.14s,
+    transform 0.18s cubic-bezier(0.2, 0.7, 0.2, 1),
+    visibility 0s linear 0.18s;
+}
+.crumb__seg:hover .crumb__menu,
+.crumb__seg:focus-within .crumb__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.crumb__box {
+  min-width: 240px;
+  max-width: 360px;
+  max-height: min(420px, 60vh);
+  overflow-y: auto;
+  border: 1.5px solid var(--ink);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow:
+    3px 4px 0 var(--drop),
+    0 30px 60px -28px var(--a-24);
+  padding: 6px;
+}
+.crumb__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 9px;
+  border: 1.3px solid transparent;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.crumb__item b {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.crumb__item em {
+  margin-inline-start: auto;
+  color: var(--muted);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+}
+a.crumb__item:hover {
+  background: var(--c-f3eadd);
+}
+.crumb__item.is-current {
+  border-color: var(--ink);
+  background: var(--c-eef3e2);
+  box-shadow: 1.5px 2px 0 var(--drop);
+}
+.crumb__item.is-soon {
+  color: var(--muted-2);
+  cursor: default;
+}
+
+/* Draggable gaps between the sidebar, the lesson and the guide rail (desktop only). */
+:root[data-layout='desktop'] .body {
+  grid-template-columns: var(--psd-side, 296px) minmax(0, 1fr) var(--psd-rail, 376px);
+}
+.psd-resizer {
+  display: none;
+}
+:root[data-layout='desktop'] .psd-resizer {
+  display: block;
+  position: absolute;
+  top: 12px;
+  bottom: 14px;
+  width: 14px;
+  z-index: 5;
+  cursor: col-resize;
+  touch-action: none;
+}
+.psd-resizer--side {
+  left: calc(var(--psd-side, 296px) - 12px);
+}
+.psd-resizer--rail {
+  right: calc(var(--psd-rail, 376px) - 14px);
+}
+.psd-resizer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.psd-resizer:hover::after,
+:root.is-resizing .psd-resizer:active::after {
+  opacity: 0.28;
+}
+:root.is-resizing,
+:root.is-resizing * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+/* The site only offers Learn: no Learn / Practice / Design Lab / Cheatsheets switcher. */
+.topbar > .nav,
+.drawer-nav {
+  display: none !important;
+}
+
+/* The language menu was laid out for 21 languages, two columns of eleven. It now lists two. */
+.lang__grid {
+  grid-template-rows: none;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  row-gap: 4px;
+}
+@media (width > 639px) {
+  .lang__menu {
+    width: 236px;
+  }
+}
